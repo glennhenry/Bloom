@@ -1,6 +1,6 @@
 <strings>
 	<entry type="UsersActivity.UserRegistered">
-		<link url="{authorProfileUrl}">{username}</link> just joined MyBiasWorld. Welcome!
+		<link url="{authorProfileUrl}">{username}</link> just joined Bloom. Welcome!
 	</entry>
 	<entry type="CafeActivity.Topic.Created">
 		<link url="{authorProfileUrl}">{authorDisplayName}</link> has created a topic in <b>{sectionName}</b>. Go check out '<link url="{topicUrl}">{topicTitle}</link>'.

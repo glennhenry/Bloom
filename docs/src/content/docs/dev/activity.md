@@ -193,7 +193,7 @@ As of now, the format can be either plain, hyperlink, bold, italic, underline, o
 
 - The server will parse any formattable part like `{username}` or `/profile/@{username}` and replace it with the username data included in the event's metadata.
 - The server returns a simpler format for client to parse and a formatted text.
-- The client will parse the format and create a hyperlink text like `[username](/profile/username) just joined MyBiasWorld. Welcome!`
+- The client will parse the format and create a hyperlink text like `[username](/profile/username) just joined Bloom. Welcome!`
 
 Currently the format does not support nested styling. For example, a hyperlink can't be bolded or colored.
 

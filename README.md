@@ -1,16 +1,12 @@
-# MyBiasWorld
+# Bloom
 
 <img src="bloom.png" alt="My bias world logo" width="200">
 
 ## About
 
-**MyBiasWorld** is a social portal platform for K-pop fans. It reimagines plain social applications of the old internet as a K-pop fan-centered environment.
+**Bloom** is a social portal platform. Inspired by the look and culture of old-school websites, forum, and services from the late 2000s and 2010s, Bloom attempts to replicate the forgotten internet culture in which people and information are connected across a range of services The project seek to discover the engineering aspect behind them and explore old-school web design.
 
-Inspired by the look and culture of old-school websites, forum, and services from the late 2000s and 2010s, the project seek to discover the engineering aspect behind them and explore old-school web design.
-
-The fan thematic layer is the heart of the platform. The platform focuses on representing various fandom and culture in the K-pop ecosystem.
-
-_This is a fan-made community project and is not affiliated or endorsed by any of the used brands. It's used only as a reference and to add personal meaning._
+_Bloom is a fan-made community project and is not affiliated or endorsed by any of the used brands. It's used only as a reference and to add personal meaning._
 
 Latest progress:
 

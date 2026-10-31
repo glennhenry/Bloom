@@ -6,7 +6,7 @@ description: Games docs
 
 One element that often exists in portal applications is an entertainment center, most notably games. On platforms like Facebook and Yahoo, the available games range from casual arcade games to fully fledged MMOs. Typically, those games are developed by third-party companies that opt for their games to be published on the platforms.
 
-For the purpose of ambience and as a social catalyst, MyBiasWorld may also provide a collection of games for the platform. For simplicity, the games will be self-developed instead of using those developed by third parties. The games should lean toward simple, casual games that either value daily play or multiplayer incentives.
+For the purpose of ambience and as a social catalyst, Bloom may also provide a collection of games for the platform. For simplicity, the games will be self-developed instead of using those developed by third parties. The games should lean toward simple, casual games that either value daily play or multiplayer incentives.
 
 Example of games to be added:
 

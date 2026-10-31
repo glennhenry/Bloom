@@ -8,7 +8,7 @@ The lobby is the landing page of the platform. It is the central place of where 
 
 In a typical social portal application, the home page is generally filled with various contents such as news, mail, weather, stock, shopping, and many more. Depending on the content, some may be static: loaded once, and never updated again unless the page is refreshed. On the other hand, others may be updated lively like a stock ticker, where it's more convinient for it to update itself rather than the user refreshing.
 
-Similarly, MyBiasWorld's lobby can aggregate the content in a semi-live manner. Static contents like the latest cafe posts can be returned directly from the server, while dynamic content like activity feed is fetched once, then updated periodically.
+Similarly, Bloom's lobby can aggregate the content in a semi-live manner. Static contents like the latest cafe posts can be returned directly from the server, while dynamic content like activity feed is fetched once, then updated periodically.
 
 ### Events
 

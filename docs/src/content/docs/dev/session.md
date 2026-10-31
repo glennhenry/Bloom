@@ -4,7 +4,7 @@ slug: session
 description: Session docs
 ---
 
-MyBiasWorld is a website application.
+Bloom is a website application.
 
 The session model used in the website is as follow:
 

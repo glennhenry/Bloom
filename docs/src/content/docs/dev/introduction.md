@@ -4,7 +4,7 @@ slug: introduction
 description: Introduction docs
 ---
 
-**MyBiasWorld** is a social portal platform for K-pop fans. The platform combines noisy social content and fan necessity to create a lively, cozy, yet warm environment for fans. The fan element, which answers why the website exist, also catalyze social experience around the platform.
+**Bloom** is a social portal platform for K-pop fans. The platform combines noisy social content and fan necessity to create a lively, cozy, yet warm environment for fans. The fan element, which answers why the website exist, also catalyze social experience around the platform.
 
 ### Objectives
 
