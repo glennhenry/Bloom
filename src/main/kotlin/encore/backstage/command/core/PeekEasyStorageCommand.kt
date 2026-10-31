@@ -6,7 +6,7 @@ import encore.backstage.command.types.ArgumentInputs
 import encore.backstage.command.types.ArgumentType
 import encore.backstage.command.types.CommandResult
 import encore.utils.dataStructure.EasyStorage
-import mbworld.context.ServerContext
+import bloom.context.ServerContext
 
 /**
  * Command to peek the contents of [EasyStorage].

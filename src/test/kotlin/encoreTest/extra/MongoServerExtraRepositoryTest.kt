@@ -2,7 +2,7 @@ package encoreTest.extra
 
 import TestCollections
 import encore.extra.MongoServerExtraRepository
-import mbworld.mongo.collection.ServerObjects
+import bloom.mongo.collection.ServerObjects
 import initMongo
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test

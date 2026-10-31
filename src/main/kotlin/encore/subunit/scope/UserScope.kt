@@ -1,6 +1,6 @@
 package encore.subunit.scope
 
-import mbworld.mongo.collection.UserId
+import bloom.mongo.collection.UserId
 
 /**
  * A user-scoped context.

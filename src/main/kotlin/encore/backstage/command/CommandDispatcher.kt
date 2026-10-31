@@ -6,7 +6,7 @@ import encore.backstage.command.types.CommandResult
 import encore.backstage.command.types.ensureIds
 import encore.fancam.Fancam
 import encore.fancam.Tags
-import mbworld.context.ServerContext
+import bloom.context.ServerContext
 
 /**
  * Dispatch and execute server registered commands.

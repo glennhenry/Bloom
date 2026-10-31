@@ -1,8 +1,8 @@
 package encore.annotation.runtime
 
 import encore.EncoreConfig
-import mbworld.config.CustomConfig
-import mbworld.config.SecretConfig
+import bloom.config.CustomConfig
+import bloom.config.SecretConfig
 
 /**
  * Used to annotate [EncoreConfig], [CustomConfig], and [SecretConfig]

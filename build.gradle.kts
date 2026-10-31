@@ -7,8 +7,8 @@ plugins {
     alias(libs.plugins.kotlin.plugin.serialization)
 }
 
-group = "dev.mbworld"
-version = "0.2.0"
+group = "dev.bloom"
+version = "0.3.0"
 
 application {
     mainClass = "ApplicationKt"
@@ -16,12 +16,12 @@ application {
 
 ktor {
     fatJar {
-        archiveFileName.set("mbworld.jar")
+        archiveFileName.set("bloom.jar")
     }
 }
 
 tasks.withType<ShadowJar> {
-    archiveFileName.set("mbworld.jar")
+    archiveFileName.set("bloom.jar")
     destinationDirectory.set(file("deploy"))
     manifest {
         attributes["Main-Class"] = "ApplicationKt"

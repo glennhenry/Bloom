@@ -3,10 +3,10 @@ package projectTest.repo
 import TestCollections
 import initMongo
 import kotlinx.coroutines.test.runTest
-import mbworld.domain.cafe.collection.LatestSectionPostInfo
-import mbworld.domain.cafe.collection.MongoCollectionRepository
-import mbworld.domain.cafe.collection.Section
-import mbworld.domain.cafe.collection.Space
+import bloom.domain.cafe.collection.LatestSectionPostInfo
+import bloom.domain.cafe.collection.MongoCollectionRepository
+import bloom.domain.cafe.collection.Section
+import bloom.domain.cafe.collection.Space
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

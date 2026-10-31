@@ -6,8 +6,8 @@ import encore.backstage.command.Command
 import encore.backstage.command.types.Argument
 import encore.backstage.command.types.ArgumentInputs
 import encore.backstage.command.types.CommandResult
-import mbworld.context.ServerContext
-import mbworld.mongo.collection.ServerId
+import bloom.context.ServerContext
+import bloom.mongo.collection.ServerId
 import kotlin.system.exitProcess
 import kotlin.time.Duration.Companion.seconds
 

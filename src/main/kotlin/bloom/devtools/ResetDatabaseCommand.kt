@@ -1,0 +1,59 @@
+package bloom.devtools
+
+import bootstrap.CodecRegistry
+import com.mongodb.kotlin.client.coroutine.MongoClient
+import encore.backstage.command.Command
+import encore.backstage.command.types.Argument
+import encore.backstage.command.types.ArgumentInputs
+import encore.backstage.command.types.CommandRequest
+import encore.backstage.command.types.CommandResult
+import encore.venue.Venue
+import bloom.context.ServerContext
+import bloom.domain.dummy.DummySetupCommand
+import bloom.mongo.collection.ServerObjects
+
+/**
+ * This command can be used to reset the database and re-setup it after.
+ *
+ * Actions:
+ * 1. Drop the existing database of [encore.EncoreDatabaseConfig.dbName].
+ * 2. Re-setup the database after using [SetupDatabaseCommand].
+ *
+ * This is typically used to delete the dummy activities created from
+ * [DummySetupCommand]. The subsequent setup action, does not re-setup
+ * every collection of the server, such as the [ServerObjects] collection.
+ * For full re-setup, restart the server instead.
+ */
+class ResetDatabaseCommand(private val mongoClient: MongoClient) : Command {
+    override val id: String = "resetdb"
+    override val name: String = "Reset DB"
+    override val description: String = """
+    This command can be used to reset the database and re-setup it after.
+    
+    Actions:
+    1. Drop the existing database of [encore.EncoreDatabaseConfig.dbName].
+    2. Re-setup the database after using [SetupDatabaseCommand].
+    
+    This is typically used to delete the dummy activities created from
+    [DummySetupCommand]. The subsequent setup action, does not re-setup
+    every collection of the server, such as the [ServerObjects] collection.
+    For full re-setup, restart the server instead.
+    """.trimIndent()
+    override val arguments: List<Argument> = emptyList()
+
+    override suspend fun execute(
+        serverContext: ServerContext,
+        args: ArgumentInputs
+    ): CommandResult {
+        val db = mongoClient.getDatabase(Venue.encore.database.dbName)
+            .withCodecRegistry(CodecRegistry)
+        db.drop()
+        serverContext.subunits.websiteSession.clearAllSessions()
+        val res = serverContext.commandDispatcher.handleCommand(
+            CommandRequest("setupdb", emptyMap()), serverContext
+        )
+        return CommandResult.Success(
+            "Dropped successfully; setup=${res.message}"
+        )
+    }
+}

@@ -1,7 +1,7 @@
 package encore.account
 
-import mbworld.mongo.collection.UserAccount
-import mbworld.mongo.collection.UserId
+import bloom.mongo.collection.UserAccount
+import bloom.mongo.collection.UserId
 
 /**
  * No-operation implementation of [AccountRepository] used for testing purposes.

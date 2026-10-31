@@ -1,7 +1,7 @@
 package encore.datastore
 
-import mbworld.mongo.collection.UserAccount
-import mbworld.mongo.collection.UserId
+import bloom.mongo.collection.UserAccount
+import bloom.mongo.collection.UserId
 
 /**
  * No-operation implementation for [DataStore] used for testing purposes.

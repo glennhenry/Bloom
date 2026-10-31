@@ -6,7 +6,7 @@ import encore.backstage.command.types.ArgumentInputs
 import encore.backstage.command.types.CommandResult
 import encore.utils.toJsonString
 import encore.venue.Venue
-import mbworld.context.ServerContext
+import bloom.context.ServerContext
 
 /**
  * Command to retrieve all [Venue]'s configuration in JSON.

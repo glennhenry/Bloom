@@ -27,19 +27,19 @@ export default defineConfig({
       tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 6 },
       credits: true,
       lastUpdated: true,
-      title: "My Bias World",
+      title: "Bloom",
       components: {
         Pagination: "./src/components/Pagination.astro",
         PageFrame: "./src/components/PageFrame.astro",
       },
       editLink: {
-        baseUrl: "https://github.com/glennhenry/MyBiasWorld/edit/main/",
+        baseUrl: "https://github.com/glennhenry/Bloom/edit/main/",
       },
       social: [
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/glennhenry/MyBiasWorld",
+          href: "https://github.com/glennhenry/Bloom",
         },
       ],
       sidebar: [

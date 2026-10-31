@@ -1,8 +1,8 @@
 package encore.subunit
 
 import encore.utils.identifier.Ids
-import mbworld.context.ServerContext
-import mbworld.context.ServerSubunits
+import bloom.context.ServerContext
+import bloom.context.ServerSubunits
 
 /**
  * A component that facilitates arbitrary subunits safekeeping.

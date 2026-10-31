@@ -1,6 +1,6 @@
 # MyBiasWorld
 
-<img src="mbworld.png" alt="My bias world logo" width="200">
+<img src="bloom.png" alt="My bias world logo" width="200">
 
 ## About
 
@@ -60,7 +60,7 @@ You can also run the server from IntelliJ IDE run plugin on `Application.kt`.
 
 ## Build
 
-To build the server, simply run the `build.bat/sh` script. Output will be in `deploy/`. Run the deployment server using `java -jar mbworld.jar`.
+To build the server, simply run the `build.bat/sh` script. Output will be in `deploy/`. Run the deployment server using `java -jar bloom.jar`.
 
 For manual build:
 
@@ -79,7 +79,7 @@ Every variables can be overriden from OS environment variables. For example, in 
 ```ps1
 $env:ENCORE_DEVMODE = "false"
 $env:ENCORE_SERVER_HOST = "127.0.0.1"
-java -jar mbworld.jar
+java -jar bloom.jar
 ```
 
 More information in [Venue.kt](https://github.com/glennhenry/Encore/blob/main/src/main/kotlin/encore/venue/Venue.kt)
@@ -160,7 +160,7 @@ description: example
 │   │   ├── websocket/              # WebSocket communication components
 │   │   ├── EncoreConfig.kt         # Encore configuration
 │   │   └── EncoreIdentity.kt       # Encore version and flavor metadata
-│   ├── mbworld/                    # Portal implementation source
+│   ├── bloom/                    # Portal implementation source
 │   │   ├── config/                 # User-defined configuration
 │   │   ├── FileRoutes.kt           # Static file serving routes
 │   │   ├── ProjectIdentity.kt      # Implementation version and flavor metadata

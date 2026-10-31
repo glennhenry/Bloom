@@ -1,6 +1,6 @@
 package encore.extra
 
-import mbworld.mongo.collection.ServerObjects
+import bloom.mongo.collection.ServerObjects
 
 /**
  * Repository handling [ServerObjects.extra] concern.

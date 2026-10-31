@@ -1,4 +1,4 @@
-rootProject.name = "My-Bias-World"
+rootProject.name = "Bloom"
 
 dependencyResolutionManagement {
     repositories {

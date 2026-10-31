@@ -8,7 +8,7 @@ import encore.time.TimeCenter
 import encore.time.source.MutableTimeSource
 import encore.time.source.TimeSource
 import encore.utils.identifier.Ids
-import mbworld.Globals
+import bloom.Globals
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancelAndJoin

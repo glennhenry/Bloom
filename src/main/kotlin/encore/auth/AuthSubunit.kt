@@ -12,7 +12,7 @@ import encore.subunit.Subunit
 import encore.subunit.scope.ServerScope
 import encore.utils.types.Outcome
 import encore.utils.types.fold
-import mbworld.Globals
+import bloom.Globals
 import kotlin.io.encoding.Base64
 
 /**

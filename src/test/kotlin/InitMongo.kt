@@ -1,9 +1,9 @@
 import com.mongodb.kotlin.client.coroutine.MongoClient
 import com.mongodb.kotlin.client.coroutine.MongoDatabase
 import org.bson.Document
-import mbworld.mongo.MongoCollections
+import bloom.mongo.MongoCollections
 
-const val MBWORLD_TEST_DB_NAME = "MBWORLD-test-DB"
+const val BLOOM_TEST_DB_NAME = "BLOOM-test-DB"
 const val MONGO_TEST_URL = "mongodb://localhost:27017"
 val TestCollections = MongoCollections(
     userAccount = "test_user_account",
@@ -21,7 +21,7 @@ val TestCollections = MongoCollections(
 
 suspend fun initMongo(
     dbUrl: String = MONGO_TEST_URL,
-    dbName: String = MBWORLD_TEST_DB_NAME
+    dbName: String = BLOOM_TEST_DB_NAME
 ): MongoDatabase {
     val mongoc = MongoClient.create(dbUrl)
     val db = mongoc.getDatabase(dbName)

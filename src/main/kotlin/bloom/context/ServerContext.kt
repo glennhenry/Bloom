@@ -1,0 +1,227 @@
+package bloom.context
+
+import encore.account.AccountRepository
+import encore.account.AccountSubunit
+import encore.account.BlankAccountRepository
+import encore.acts.ActIdStore
+import encore.acts.StageActDirector
+import encore.auth.AuthSubunit
+import encore.backstage.command.CommandDispatcher
+import encore.creation.UserCreationSubunit
+import encore.datastore.BlankDataStore
+import encore.datastore.DataStore
+import encore.extra.InMemoryServerExtraRepository
+import encore.extra.ServerExtraRepository
+import encore.extra.ServerExtraSubunit
+import encore.fancam.Fancam
+import encore.session.SessionSubunit
+import encore.subunit.Subunit
+import encore.subunit.SubunitLocator
+import encore.subunit.scope.ServerScope
+import encore.time.source.SystemTimeSource
+import encore.time.source.TimeSource
+import encore.utils.support.className
+import encore.websocket.WebSocketManager
+import kotlinx.coroutines.CoroutineScope
+import bloom.domain.activity.ActivitySubunit
+import bloom.domain.auth.session.BlankSessionStore
+import bloom.domain.auth.session.SessionStore
+import bloom.domain.auth.session.WebsiteSessionSubunit
+import bloom.domain.cafe.collection.BlankCollectionRepository
+import bloom.domain.cafe.collection.CollectionRepository
+import bloom.domain.cafe.collection.CollectionSubunit
+import bloom.domain.cafe.likes.InMemoryLikesRepository
+import bloom.domain.cafe.likes.LikesRepository
+import bloom.domain.cafe.likes.LikesSubunit
+import bloom.domain.cafe.reply.InMemoryReplyRepository
+import bloom.domain.cafe.reply.ReplyRepository
+import bloom.domain.cafe.reply.ReplySubunit
+import bloom.domain.cafe.topic.InMemoryTopicRepository
+import bloom.domain.cafe.topic.TopicRepository
+import bloom.domain.cafe.topic.TopicSubunit
+import bloom.domain.lobby.activityFeed.ActivityFeedSubunit
+import bloom.domain.profile.subunits.BlankProfileRepository
+import bloom.domain.profile.subunits.ProfileRepository
+import bloom.domain.profile.subunits.ProfileSubunit
+import kotlin.coroutines.EmptyCoroutineContext
+
+/**
+ * Represents the **global server-side context**.
+ *
+ * `ServerContext` includes various server-side components needed on the server.
+ * It acts as a dependency container which is distributed across the server code.
+ *
+ * @property appScope Root coroutine scope system components can use.
+ * @property dataStore [DataStore] instance of the server.
+ * @property commandDispatcher Tracks and executes server commands.
+ * @property stageActDirector Provide API to start and stop stage acts.
+ * @property webSocketManager Manages client websocket connections.
+ * @property subunits Container for server subunit instances.
+ * @property locator Component to store subunits.
+ */
+data class ServerContext(
+    val appScope: CoroutineScope,
+    val dataStore: DataStore,
+    val commandDispatcher: CommandDispatcher,
+    val stageActDirector: StageActDirector,
+    val webSocketManager: WebSocketManager,
+    val subunits: ServerSubunits,
+    val locator: SubunitLocator
+) {
+    companion object {
+        /**
+         * Creates a test instance of [ServerContext].
+         *
+         * @param parentScope `CoroutineScope` for [SessionSubunit].
+         * @param timeSource [TimeSource] for [StageActDirector].
+         * @param dataStore Also used to build [UserCreationSubunit].
+         * @param accountRepository Used to build [AccountSubunit].
+         * @param sessionStore Used to build [WebsiteSessionSubunit].
+         * @param profileRepository Used to build [ProfileSubunit].
+         * @param collectionRepository Used to build [CollectionSubunit].
+         * @param topicRepository Used to build [TopicSubunit].
+         * @param replyRepository Used to build [ReplySubunit].
+         * @param likesRepository Used to build [LikesSubunit].
+         */
+        fun createForTest(
+            parentScope: CoroutineScope = CoroutineScope(EmptyCoroutineContext),
+            timeSource: TimeSource = SystemTimeSource(),
+            dataStore: DataStore = BlankDataStore(),
+            accountRepository: AccountRepository = BlankAccountRepository(),
+            serverExtraRepository: ServerExtraRepository = InMemoryServerExtraRepository(),
+            sessionStore: SessionStore = BlankSessionStore(),
+            profileRepository: ProfileRepository = BlankProfileRepository(),
+            collectionRepository: CollectionRepository = BlankCollectionRepository(),
+            topicRepository: TopicRepository = InMemoryTopicRepository(),
+            replyRepository: ReplyRepository = InMemoryReplyRepository(),
+            likesRepository: LikesRepository = InMemoryLikesRepository(),
+        ): ServerContext {
+            val account = AccountSubunit.createForTest(accountRepository)
+            val session = SessionSubunit.createForTest(parentScope)
+            val creation = UserCreationSubunit.createForTest(dataStore)
+
+            val websiteSession = WebsiteSessionSubunit.createForTest(parentScope, timeSource, sessionStore)
+            val profile = ProfileSubunit.createForTest(profileRepository)
+            val collection = CollectionSubunit.createForTest(collectionRepository)
+            val topic = TopicSubunit.createForTest(topicRepository)
+            val reply = ReplySubunit.createForTest(replyRepository)
+            val likes = LikesSubunit.createForTest(likesRepository)
+            val activity = ActivitySubunit.createForTest()
+            val activityFeed = ActivityFeedSubunit.createForTest()
+
+            return ServerContext(
+                appScope = parentScope,
+                dataStore = dataStore,
+                commandDispatcher = CommandDispatcher(),
+                stageActDirector = StageActDirector(timeSource, ActIdStore),
+                webSocketManager = WebSocketManager(),
+                subunits = ServerSubunits(
+                    account = account,
+                    auth = AuthSubunit(account, creation),
+                    extra = ServerExtraSubunit(serverExtraRepository),
+                    session = session,
+
+                    websiteSession = websiteSession,
+                    profile = profile,
+                    collection = collection,
+                    topic = topic,
+                    reply = reply,
+                    likes = likes,
+                    activity = activity,
+                    activityFeed = activityFeed
+                ),
+                locator = SubunitLocator(),
+            )
+        }
+    }
+}
+
+/**
+ * Container for all server-scoped [Subunit] instances.
+ *
+ * Server subunits encapsulate domain logic that operates at the server level.
+ * They may manage shared state or provide global domain functionality,
+ * with or without persistent data.
+ *
+ * Server subunits are typically bound to [ServerScope].
+ *
+ * Examples:
+ * - An infra-related component providing session creation and verification.
+ * - A leaderboard representing global state is not owned by any single player.
+ *   A `LeaderboardSubunit` may expose operations to query or update rankings.
+ * - A matchmaking system may not persist data, but can maintain in-memory
+ *   state and provide matchmaking-specific functionality.
+ *
+ * @property account Provides API related to accounts.
+ * @property auth Provides authentication functions.
+ * @property extra Provides server extra data service.
+ * @property session Manages session of users.
+
+ * @property websiteSession Provides API related to [WebsiteSessionSubunit].
+ * @property profile Provides API related to profiles.
+ * @property topic Provides API related to topics.
+ * @property reply Provides API related to replies.
+ * @property likes Provides API related to likes.
+ * @property collection Provides API related to cafe collection.
+ * @property activity Provides API related to activity.
+ * @property activityFeed Provides API related to activity feed.
+ */
+data class ServerSubunits(
+    val account: AccountSubunit,
+    val auth: AuthSubunit,
+    val extra: ServerExtraSubunit,
+    val session: SessionSubunit,
+
+    val websiteSession: WebsiteSessionSubunit,
+    val profile: ProfileSubunit,
+    val topic: TopicSubunit,
+    val reply: ReplySubunit,
+    val likes: LikesSubunit,
+    val collection: CollectionSubunit,
+    val activity: ActivitySubunit,
+    val activityFeed: ActivityFeedSubunit
+) {
+    /**
+     * Return all server subunit instances.
+     */
+    fun all(): Set<Subunit<ServerScope>> {
+        return setOf(
+            account,
+            auth,
+            session,
+            extra,
+            websiteSession,
+            profile,
+            topic,
+            reply,
+            likes,
+            collection,
+            activity,
+            activityFeed
+        )
+    }
+
+    /**
+     * Debut every server subunit instances with [scope].
+     */
+    suspend fun debut(scope: ServerScope) {
+        all().forEach { subunit ->
+            val result = subunit.debut(scope)
+            if (result.isFailure) {
+                Fancam.error(result.exceptionOrNull()) { "Result.failure on ServerSubunit debut '${subunit.className()}'" }
+            }
+        }
+    }
+
+    /**
+     * Disband every server subunit instances with [scope].
+     */
+    suspend fun disband(scope: ServerScope) {
+        all().forEach { subunit ->
+            val result = subunit.disband(scope)
+            if (result.isFailure) {
+                Fancam.error(result.exceptionOrNull()) { "Result.failure on ServerSubunit disband '${subunit.className()}'" }
+            }
+        }
+    }
+}

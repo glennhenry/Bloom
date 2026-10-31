@@ -3,8 +3,8 @@ package projectTest.repo
 import TestCollections
 import initMongo
 import kotlinx.coroutines.test.runTest
-import mbworld.domain.profile.subunits.MongoProfileRepository
-import mbworld.domain.profile.model.Profile
+import bloom.domain.profile.subunits.MongoProfileRepository
+import bloom.domain.profile.model.Profile
 import testUtils.assertDoesNotFailSuspend
 import testUtils.createProfile
 import kotlin.test.Test

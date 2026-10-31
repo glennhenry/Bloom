@@ -30,8 +30,8 @@ import io.ktor.server.websocket.*
 import io.ktor.utils.io.*
 import io.ktor.websocket.*
 import kotlinx.serialization.json.Json
-import mbworld.ProjectIdentity
-import mbworld.context.ServerContext
+import bloom.ProjectIdentity
+import bloom.context.ServerContext
 import java.io.File
 import kotlin.time.Duration.Companion.hours
 import kotlin.time.Duration.Companion.minutes

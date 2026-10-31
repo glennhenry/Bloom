@@ -2,9 +2,9 @@ package encore
 
 import encore.annotation.runtime.VenueKey
 import encore.fancam.events.Level
-import mbworld.config.CustomConfig
-import mbworld.config.SecretConfig
-import mbworld.Globals
+import bloom.config.CustomConfig
+import bloom.config.SecretConfig
+import bloom.Globals
 import kotlinx.serialization.Serializable
 
 /**

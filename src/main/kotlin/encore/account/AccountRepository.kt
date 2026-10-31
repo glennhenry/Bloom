@@ -1,7 +1,7 @@
 package encore.account
 
-import mbworld.mongo.collection.UserAccount
-import mbworld.mongo.collection.UserId
+import bloom.mongo.collection.UserAccount
+import bloom.mongo.collection.UserId
 
 /**
  * Repository for [UserAccount] core collection.

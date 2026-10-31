@@ -15,7 +15,7 @@
         <admin enabled="true" />
         <database>
             <mongo>
-                <dbname>MBWORLD-prod-DB</dbname>
+                <dbname>BLOOM-prod-DB</dbname>
                 <dburl>mongodb://localhost:27017</dburl>
             </mongo>
         </database>

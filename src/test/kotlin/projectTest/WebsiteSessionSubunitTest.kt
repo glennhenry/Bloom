@@ -4,9 +4,9 @@ import encore.subunit.scope.ServerScope
 import encore.time.source.MutableTimeSource
 import encore.utils.identifier.Ids
 import kotlinx.coroutines.test.runTest
-import mbworld.domain.auth.session.SessionStore
-import mbworld.domain.auth.session.SessionStoreModel
-import mbworld.domain.auth.session.WebsiteSessionSubunit
+import bloom.domain.auth.session.SessionStore
+import bloom.domain.auth.session.SessionStoreModel
+import bloom.domain.auth.session.WebsiteSessionSubunit
 import kotlin.test.Test
 import kotlin.test.assertNotNull
 import kotlin.test.assertNull

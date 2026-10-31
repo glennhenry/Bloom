@@ -1,0 +1,49 @@
+package bloom.domain.dummy
+
+import encore.time.TimeCenter
+import encore.utils.identifier.Ids
+import bloom.domain.Members
+import bloom.domain.cafe.Sections
+import bloom.domain.cafe.topic.Topic
+import kotlin.time.Duration.Companion.days
+import kotlin.time.Duration.Companion.milliseconds
+
+/**
+ * Utilities to create dummy topics.
+ */
+object TopicFactory {
+    fun topics(authorId: String, amount: Int): List<Topic> {
+        return List(amount) {
+            val member = Members.all.random()
+            Topic(
+                topicId = Ids.uuid(),
+                sectionId = Sections.keys.random(),
+                title = title(member),
+                authorId = authorId,
+                content = content(member),
+                likes = 0,
+                replies = 0,
+                postedDate = postedDate(),
+                latestPost = null
+            )
+        }
+    }
+
+    private fun title(member: String = Members.all.random()): String {
+        return "$member is ${Words.capitalAdjective()}"
+    }
+
+    private fun content(member: String = Members.all.random()): String {
+        return "I ${Words.verb()} $member so much."
+    }
+
+    /**
+     * Get a random `postedDate` from now up to 14 days ago.
+     */
+    private fun postedDate(): Long {
+        val now = TimeCenter.now()
+        val from = now.milliseconds - 14.days
+        val range = from.inWholeMilliseconds.rangeTo(now)
+        return range.random()
+    }
+}

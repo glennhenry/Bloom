@@ -7,7 +7,7 @@ import encore.backstage.command.types.ArgumentInputs
 import encore.backstage.command.types.ArgumentType
 import encore.backstage.command.types.CommandResult
 import encore.time.TimeCenter
-import mbworld.context.ServerContext
+import bloom.context.ServerContext
 
 /**
  * Command to get the details of session by its token.

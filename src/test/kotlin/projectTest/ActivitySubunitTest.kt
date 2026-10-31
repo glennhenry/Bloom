@@ -1,11 +1,11 @@
 package projectTest
 
 import kotlinx.coroutines.test.runTest
-import mbworld.domain.activity.ActivityReceiver
-import mbworld.domain.activity.ActivitySubunit
-import mbworld.domain.activity.model.Activity
-import mbworld.domain.activity.model.ActivitySource
-import mbworld.domain.cafe.CafeActivity
+import bloom.domain.activity.ActivityReceiver
+import bloom.domain.activity.ActivitySubunit
+import bloom.domain.activity.model.Activity
+import bloom.domain.activity.model.ActivitySource
+import bloom.domain.cafe.CafeActivity
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue

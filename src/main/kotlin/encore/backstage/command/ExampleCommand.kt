@@ -4,7 +4,7 @@ import encore.backstage.command.types.Argument
 import encore.backstage.command.types.ArgumentInputs
 import encore.backstage.command.types.ArgumentType
 import encore.backstage.command.types.CommandResult
-import mbworld.context.ServerContext
+import bloom.context.ServerContext
 
 /**
  * An example implementation of command.
