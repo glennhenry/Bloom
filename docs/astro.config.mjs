@@ -54,6 +54,7 @@ export default defineConfig({
           collapsed: true,
           items: [
             { label: "Introduction", slug: "introduction" },
+            { label: "Package Structure", slug: "package-structure" },
             { label: "Cafe", slug: "cafe" },
             { label: "Session", slug: "session" },
             { label: "Profile", slug: "profile" },

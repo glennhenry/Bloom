@@ -156,11 +156,8 @@ description: example
 │   │   ├── websocket/              # WebSocket communication components
 │   │   ├── EncoreConfig.kt         # Encore configuration
 │   │   └── EncoreIdentity.kt       # Encore version and flavor metadata
-│   ├── bloom/                    # Portal implementation source
-│   │   ├── config/                 # User-defined configuration
-│   │   ├── FileRoutes.kt           # Static file serving routes
-│   │   ├── ProjectIdentity.kt      # Implementation version and flavor metadata
-│   │   ├── Globals.kt              # Global application constants
+│   ├── bloom/                      # Implementation source
+│   │   └─────────────────────────── See docs
 │   └── Application.kt              # Application entry point and wiring
 │
 ├── src/test/kotlin/
