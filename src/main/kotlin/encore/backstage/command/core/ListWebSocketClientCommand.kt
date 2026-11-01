@@ -4,7 +4,7 @@ import encore.backstage.command.Command
 import encore.backstage.command.types.Argument
 import encore.backstage.command.types.ArgumentInputs
 import encore.backstage.command.types.CommandResult
-import bloom.context.ServerContext
+import bloom.core.context.ServerContext
 
 /**
  * Command to list all websocket clients.

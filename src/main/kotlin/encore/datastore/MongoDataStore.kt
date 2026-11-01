@@ -7,9 +7,9 @@ import com.mongodb.kotlin.client.coroutine.MongoDatabase
 import encore.account.FieldEmail
 import encore.account.FieldUserId
 import encore.account.FieldUsername
-import bloom.mongo.collection.UserAccount
-import bloom.mongo.collection.UserId
-import bloom.mongo.collection.ServerObjects
+import bloom.core.mongo.collection.UserAccount
+import bloom.core.mongo.collection.UserId
+import bloom.core.mongo.collection.ServerObjects
 import encore.fancam.Fancam
 import encore.fancam.Tags
 import encore.utils.support.asUnit
@@ -18,8 +18,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.firstOrNull
 import org.bson.conversions.Bson
-import bloom.mongo.MongoCollections
-import bloom.mongo.collection.ServerObjectsId
+import bloom.core.mongo.MongoCollections
+import bloom.core.mongo.collection.ServerObjectsId
 import kotlin.time.measureTime
 
 /** `dbId`*/

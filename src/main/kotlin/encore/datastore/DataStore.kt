@@ -1,7 +1,7 @@
 package encore.datastore
 
-import bloom.mongo.collection.UserAccount
-import bloom.mongo.collection.UserId
+import bloom.core.mongo.collection.UserAccount
+import bloom.core.mongo.collection.UserId
 
 /**
  * Persistence component that owns access to the core database collections

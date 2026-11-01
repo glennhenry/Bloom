@@ -5,7 +5,7 @@ import encore.backstage.command.CommandDispatcher
 import encore.backstage.command.ExampleCommand
 import encore.backstage.command.types.*
 import kotlinx.coroutines.test.runTest
-import bloom.context.ServerContext
+import bloom.core.context.ServerContext
 import testUtils.TestFancam
 import testUtils.assertDoesNotFail
 import kotlin.test.*

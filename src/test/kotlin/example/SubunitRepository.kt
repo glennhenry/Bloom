@@ -5,7 +5,7 @@ import com.mongodb.client.model.Updates
 import com.mongodb.kotlin.client.coroutine.MongoCollection
 import encore.datastore.DocumentNotFoundException
 import encore.account.FieldUserId
-import bloom.mongo.collection.UserId
+import bloom.core.mongo.collection.UserId
 import encore.datastore.runMongoCatching
 import encore.datastore.throwIfNothingMatched
 import encore.fancam.Fancam

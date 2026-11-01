@@ -4,8 +4,8 @@ import TestCollections
 import encore.utils.identifier.Ids
 import initMongo
 import kotlinx.coroutines.test.runTest
-import bloom.domain.cafe.likes.Likes
-import bloom.domain.cafe.likes.MongoLikesRepository
+import bloom.kpop.cafe.likes.Likes
+import bloom.kpop.cafe.likes.MongoLikesRepository
 import testUtils.assertDoesNotFailSuspend
 import kotlin.test.Test
 import kotlin.test.assertEquals

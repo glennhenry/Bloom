@@ -1,6 +1,6 @@
 package encore.account
 
-import bloom.mongo.collection.UserId
+import bloom.core.mongo.collection.UserId
 import kotlinx.serialization.Serializable
 
 /**

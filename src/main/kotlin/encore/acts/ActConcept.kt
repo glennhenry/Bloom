@@ -1,7 +1,7 @@
 package encore.acts
 
 import encore.acts.choreo.BasicChoreography
-import bloom.mongo.collection.UserId
+import bloom.core.mongo.collection.UserId
 
 /**
  * Marker interface representing the input for a stage act.

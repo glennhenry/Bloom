@@ -6,9 +6,9 @@ import encore.utils.identifier.shortUuid
 import initMongo
 import io.ktor.util.date.*
 import kotlinx.coroutines.test.runTest
-import bloom.domain.cafe.topic.MongoTopicRepository
-import bloom.domain.cafe.topic.LatestPostInfo
-import bloom.domain.cafe.topic.Topic
+import bloom.kpop.cafe.topic.MongoTopicRepository
+import bloom.kpop.cafe.topic.LatestPostInfo
+import bloom.kpop.cafe.topic.Topic
 import testUtils.assertDoesNotFailSuspend
 import testUtils.randomString
 import kotlin.test.Test

@@ -4,9 +4,9 @@ import TestCollections
 import initMongo
 import io.ktor.util.date.*
 import kotlinx.coroutines.test.runTest
-import bloom.domain.cafe.reply.Comment
-import bloom.domain.cafe.reply.MongoReplyRepository
-import bloom.domain.cafe.reply.Reply
+import bloom.kpop.cafe.reply.Comment
+import bloom.kpop.cafe.reply.MongoReplyRepository
+import bloom.kpop.cafe.reply.Reply
 import testUtils.assertDoesNotFailSuspend
 import testUtils.randomString
 import kotlin.test.Test

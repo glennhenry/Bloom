@@ -4,8 +4,8 @@ import encore.EncoreConfig
 import encore.annotation.runtime.VenueKey
 import encore.fancam.Fancam
 import encore.fancam.Tags
-import bloom.config.CustomConfig
-import bloom.config.SecretConfig
+import bloom.core.config.CustomConfig
+import bloom.core.config.SecretConfig
 import java.io.File
 
 /**

@@ -3,7 +3,7 @@ package encore.backstage.command
 import encore.backstage.command.types.Argument
 import encore.backstage.command.types.ArgumentInputs
 import encore.backstage.command.types.CommandResult
-import bloom.context.ServerContext
+import bloom.core.context.ServerContext
 
 /**
  * Represents a server command that can be invoked to perform

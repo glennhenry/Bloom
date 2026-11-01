@@ -1,10 +1,10 @@
 package encore.creation
 
 import encore.utils.types.Report
-import bloom.domain.profile.model.Profile
-import bloom.mongo.collection.UserAccount
-import bloom.mongo.collection.UserId
-import bloom.mongo.collection.ServerObjects
+import bloom.profile.model.Profile
+import bloom.core.mongo.collection.UserAccount
+import bloom.core.mongo.collection.UserId
+import bloom.core.mongo.collection.ServerObjects
 
 /**
  * Component responsible for managing database documents for new user.

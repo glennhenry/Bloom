@@ -1,7 +1,7 @@
 package encore.account
 
-import bloom.mongo.collection.UserAccount
-import bloom.mongo.collection.UserId
+import bloom.core.mongo.collection.UserAccount
+import bloom.core.mongo.collection.UserId
 
 /**
  * Repository for [UserAccount] core collection.
@@ -55,7 +55,7 @@ interface AccountRepository {
     /**
      * Returns the [Credentials] of the provided [username], if the account exists.
      */
-    suspend fun getCredentials(username: String): Result<encore.account.Credentials?>
+    suspend fun getCredentials(username: String): Result<Credentials?>
 
     /**
      * Update [UserAccount] of [userId] with the new [account].

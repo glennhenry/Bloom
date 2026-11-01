@@ -1,16 +1,16 @@
 package testUtils
 
-import bloom.mongo.collection.UserAccount
-import bloom.mongo.collection.UserId
+import bloom.core.mongo.collection.UserAccount
+import bloom.core.mongo.collection.UserId
 import encore.time.TimeCenter
 import encore.utils.hash
 import encore.utils.identifier.Ids
-import bloom.domain.Members
-import bloom.domain.profile.model.FanProfile
-import bloom.domain.profile.model.GameProfile
-import bloom.domain.profile.model.Profile
-import bloom.domain.profile.model.UserLevel
-import bloom.domain.profile.model.UsersStats
+import bloom.kpop.Members
+import bloom.profile.model.FanProfile
+import bloom.profile.model.GameProfile
+import bloom.profile.model.Profile
+import bloom.profile.model.UserLevel
+import bloom.profile.model.UsersStats
 
 fun createAccount(
     userId: UserId = Ids.uuid(),

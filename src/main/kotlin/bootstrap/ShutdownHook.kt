@@ -1,6 +1,6 @@
 package bootstrap
 
-import bloom.context.ServerSubunits
+import bloom.core.context.ServerSubunits
 import encore.fancam.Fancam
 import encore.fancam.Tags
 import encore.subunit.scope.ServerScope

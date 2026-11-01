@@ -1,6 +1,6 @@
 package projectTest
 
-import bloom.domain.cafe.toUrlSlug
+import bloom.kpop.cafe.toUrlSlug
 import kotlin.test.Test
 import kotlin.test.assertEquals
 

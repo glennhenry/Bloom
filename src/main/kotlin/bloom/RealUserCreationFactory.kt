@@ -1,17 +1,13 @@
 package bloom
 
+import bloom.core.mongo.collection.UserAccount
+import bloom.core.mongo.collection.UserId
+import bloom.profile.model.*
 import encore.creation.UserCreationFactory
 import encore.time.TimeCenter
 import encore.utils.hash
 import encore.utils.identifier.Ids
 import encore.utils.types.Report
-import bloom.domain.profile.model.FanProfile
-import bloom.domain.profile.model.GameProfile
-import bloom.domain.profile.model.Profile
-import bloom.domain.profile.model.UserLevel
-import bloom.domain.profile.model.UsersStats
-import bloom.mongo.collection.UserAccount
-import bloom.mongo.collection.UserId
 
 /**
  * Concrete implementation of [UserCreationFactory] that must be

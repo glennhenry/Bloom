@@ -9,7 +9,7 @@ import encore.backstage.command.types.CommandResult
 import encore.session.SessionSubunit
 import encore.session.UserSession
 import encore.time.TimeCenter
-import bloom.context.ServerContext
+import bloom.core.context.ServerContext
 
 /**
  * Command to list the active sessions of [SessionSubunit].

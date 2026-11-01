@@ -1,9 +1,9 @@
 package encore.creation
 
 import encore.utils.types.Report
-import bloom.domain.profile.model.Profile
-import bloom.mongo.collection.UserAccount
-import bloom.mongo.collection.UserId
+import bloom.profile.model.Profile
+import bloom.core.mongo.collection.UserAccount
+import bloom.core.mongo.collection.UserId
 
 class BlankUserCreationFactory: UserCreationFactory {
     override fun userId(isAdmin: Boolean): UserId {
