@@ -15,14 +15,14 @@ Bloom is a "portal" to (illustrative):
 - Services
   - Bloom forecast (weather report)
   - Bloom finance (stock)
-  - Bloom maps
-  - Bloom market (e-shopping)
+  - Bloom atlas (maps)
+  - Bloom mall (e-shopping)
 - Messaging
-  - Bloom mail (email service)
-- Community
-  - Bloom network (reddit-like forum)
-  - Bloom blog
-  - Bloom talk (live chat)
+  - Bloom mail
+- People
+  - Bloom community (reddit-like forum)
+  - Bloom story (blog)
+  - Bloom conversation (live chat)
 - Entertainment
   - Bloom ask (quiz & polls)
   - Bloom games
