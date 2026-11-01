@@ -14,18 +14,26 @@
     }
 
     .topbar-grid {
-      display: grid;
-      grid-template-columns: 600px 200px;
-      grid-template-rows: 45px 35px;
-      grid-template-areas:
-        "links   account"
-        "notices search ";
+      display: flex;
+      flex-direction: column;
       flex: 1;
     }
 
+    .topbar-up {
+      min-height: 45px;
+      display: flex;
+    }
+
+    .topbar-down {
+      min-height: 35px;
+      display: flex;
+    }
+
     .links {
-      grid-area: links;
+      width: 600px;
       padding: 0px 8px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 
     .top-links {
@@ -79,7 +87,7 @@
     }
 
     .account-info {
-      grid-area: account;
+      width: 200px;
       display: flex;
       padding: 0px 8px;
       justify-content: end;
@@ -93,7 +101,7 @@
     }
 
     .notices {
-      grid-area: notices;
+      width: 550px;
       justify-content: end;
       display: flex;
       padding: 0px 8px;
@@ -113,7 +121,7 @@
     }
 
     .search {
-      grid-area: search;
+      width: 250px;
       display: flex;
       gap: 4px;
       justify-content: end;
@@ -123,7 +131,7 @@
 
     .search-input {
       all: unset;
-      width: 120px;
+      width: 200px;
       height: 25px;
       background-color: white;
       border: 1px solid #ccc;
@@ -142,137 +150,139 @@
   <header class="topbar" th:fragment="topbar (account)">
     <div th:replace="~{fragments/logo :: logo}"></div>
     <div class="topbar-grid">
-      <div class="links">
-        <nav class="top-links">
+      <div class="topbar-up">
+        <nav class="links">
           <a class="icon-link" href="/">
             <img src="/icons/house.png" width="16px" alt="House">
             <p>Lobby</p>
           </a>
-          <div class="dropdown-link">
-            <a class="icon-link" href="/cafe">
-              <img src="/icons/coffee.png" width="20px" alt="Coffee">
-              <p>Cafe</p>
-              <img class="down-arrow" src="/icons/down-arrow.png" width="8px">
-            </a>
-            <div class="dropdown-link-items hidden">
-              <a class="dropdown-link-item icon-link" href="/cafe/kpop">
-                🍿
-                <p>K-pop Discussion</p>
-              </a>
-              <a class="dropdown-link-item icon-link" href="/cafe/releases">
-                🎵
-                <p>K-pop Releases</p>
-              </a>
-              <a class="dropdown-link-item icon-link" href="/cafe/bgroup">
-                🐶
-                <p>Boy Groups Discussion</p>
-              </a>
-              <a class="dropdown-link-item icon-link" href="/cafe/ggroup">
-                🐱
-                <p>Girl Groups Discussion</p>
-              </a>
-              <a class="dropdown-link-item icon-link" href="/cafe/oldkpop">
-                ⚜️
-                <p>Old K-pop Discussion</p>
-              </a>
-              <a class="dropdown-link-item icon-link" href="/cafe/kep1er">
-                <img src="/icons/kep1er.png" width="20px" alt="Kep1er logo">
-                <p>Kep1er Discussion</p>
-              </a>
-              <a class="dropdown-link-item icon-link" href="/cafe/media">
-                <img src="/icons/tv.png" width="20px" alt="TV">
-                <p>Media</p>
-              </a>
-              <a class="dropdown-link-item icon-link" href="/cafe/games">
-                <img src="/icons/controller.png" width="24px" style="margin:-2px;" alt="Controller">
-                <p>Games</p>
-              </a>
-            </div>
-          </div>
+          <a class="icon-link" href="javascript:void(0)">
+            <img src="/icons/temp.png" width="16px">
+            <p>Mail</p>
+          </a>
+          <a class="icon-link" href="javascript:void(0)">
+            <img src="/icons/temp.png" width="16px">
+            <p>News</p>
+          </a>
+          <div></div>
           <div class="dropdown-link">
             <a class="icon-link" href="javascript:void(0)">
-              <img src="/icons/book.png" width="20px" alt="Book">
-              <p>Wiki</p>
-              <img class="down-arrow" src="/icons/down-arrow.png" width="8px">
-            </a>
-            <div class="dropdown-link-items hidden">
-              <a class="dropdown-link-item icon-link" href="javascript:void(0)">
-                <img src="/icons/calculator.png" width="20px" alt="Calculator">
-                <p>Icon link placeholder</p>
-              </a>
-              <a class="dropdown-link-item link" href="javascript:void(0)">
-                <p>Link placeholder</p>
-              </a>
-            </div>
-          </div>
-          <div class="dropdown-link">
-            <a class="icon-link" href="javascript:void(0)">
-              <img style="margin-right:-4px;" src="/icons/dice.png" width="24px" alt="Dice">
+              <img src="/icons/dice.png" width="16px" alt="Dice">
               <p>Games</p>
               <img class="down-arrow" src="/icons/down-arrow.png" width="8px">
             </a>
             <div class="dropdown-link-items hidden">
               <a class="dropdown-link-item icon-link" href="javascript:void(0)">
-                <img src="/icons/calculator.png" width="20px" alt="Calculator">
-                <p>Icon link placeholder</p>
+                <img src="/icons/temp.png" width="20px">
+                <p>Wordle</p>
               </a>
-              <a class="dropdown-link-item link" href="javascript:void(0)">
-                <p>Link placeholder</p>
+              <a class="dropdown-link-item icon-link" href="javascript:void(0)">
+                <img src="/icons/temp.png" width="20px">
+                <p>Crossword</p>
+              </a>
+              <a class="dropdown-link-item icon-link" href="javascript:void(0)">
+                <img src="/icons/temp.png" width="20px">
+                <p>Billiard</p>
+              </a>
+              <a class="dropdown-link-item icon-link" href="javascript:void(0)">
+                <img src="/icons/temp.png" width="20px">
+                <p>Poker</p>
               </a>
             </div>
           </div>
           <div class="dropdown-link">
             <a class="icon-link" href="javascript:void(0)">
-              <img src="/icons/tool.png" width="20px" alt="Tools">
-              <p>Tools & Services</p>
+              <img src="/icons/temp.png" width="16px">
+              <p>Services</p>
               <img class="down-arrow" src="/icons/down-arrow.png" width="8px">
             </a>
             <div class="dropdown-link-items hidden">
               <a class="dropdown-link-item icon-link" href="javascript:void(0)">
+                <img src="/icons/temp.png" width="20px">
+                <p>Forecast</p>
+              </a>
+              <a class="dropdown-link-item icon-link" href="javascript:void(0)">
+                <img src="/icons/temp.png" width="20px">
+                <p>Finance</p>
+              </a>
+              <a class="dropdown-link-item icon-link" href="javascript:void(0)">
+                <img src="/icons/temp.png" width="20px">
+                <p>Maps</p>
+              </a>
+              <a class="dropdown-link-item icon-link" href="javascript:void(0)">
+                <img src="/icons/shop.png" width="20px" alt="Shop">
+                <p>Market</p>
+              </a>
+            </div>
+          </div>
+          <div class="dropdown-link">
+            <a class="icon-link" href="javascript:void(0)">
+              <img src="/icons/temp.png" width="16px">
+              <p>Community</p>
+              <img class="down-arrow" src="/icons/down-arrow.png" width="8px">
+            </a>
+            <div class="dropdown-link-items hidden">
+              <a class="dropdown-link-item icon-link" href="javascript:void(0)">
+                <img src="/icons/temp.png" width="20px">
+                <p>Network</p>
+              </a>
+              <a class="dropdown-link-item icon-link" href="javascript:void(0)">
+                <img src="/icons/temp.png" width="20px">
+                <p>Blog</p>
+              </a>
+            </div>
+          </div>
+          <div></div>
+          <div></div>
+          <div class="dropdown-link">
+            <a class="icon-link" href="javascript:void(0)">
+              <img src="/icons/tool.png" width="16px" alt="Tools">
+              <p>Tools</p>
+              <img class="down-arrow" src="/icons/down-arrow.png" width="8px">
+            </a>
+            <div class="dropdown-link-items hidden">
+              <a class="dropdown-link-item icon-link" href="javascript:void(0)">
+                <img src="/icons/temp.png" width="20px">
+                <p>Calendar</p>
+              </a>
+              <a class="dropdown-link-item icon-link" href="javascript:void(0)">
                 <img src="/icons/calculator.png" width="20px" alt="Calculator">
-                <p>Icon link placeholder</p>
+                <p>Calculator</p>
               </a>
               <a class="dropdown-link-item link" href="javascript:void(0)">
-                <p>Link placeholder</p>
+                <img src="/icons/temp.png" width="20px">
+                <p>Time converter</p>
               </a>
             </div>
           </div>
         </nav>
-        <nav class="bottom-links">
-          <a class="icon-link" href="javascript:void(0)">
-            <img src="/icons/shop.png" width="20px" alt="Shop">
-            <p>Shop</p>
+        <div class="account-info">
+          <div th:if="${account != null}">
+            <p>Hello, <u th:text="${account.username}"></u></p>
+            <a class="link" href="/logout">Logout</a>
+          </div>
+          <div class="account-info-col" th:if="${account == null}">
+            <a class="link" href="/register">Register</a>
+            <a class="link" href="/login">Login</a>
+          </div>
+        </div>
+      </div>
+      <div class="topbar-down">
+        <div class="notices">
+          <div class="notices-link">
+            <a class="link" href="javascript:void(0)">Help</a>
+          </div>
+          <div class="server-time-row">
+            <p class="server-time">Time: 12:10</p>
+            <img src="/icons/clock-black.png" width="22px" alt="Clock">
+          </div>
+        </div>
+        <div class="search">
+          <input class="search-input" type="text" placeholder="Search">
+          <a class="search-action" href="javascript:void(0)">
+            <img src="/icons/search.png" width="16" alt="Search">
           </a>
-          <a class="icon-link" href="javascript:void(0)">
-            <img src="/icons/board.png" width="20px" alt="Board">
-            <p>Board</p>
-          </a>
-        </nav>
-      </div>
-      <div class="account-info">
-        <div th:if="${account != null}">
-          <p>Hello, <u th:text="${account.username}"></u></p>
-          <a class="link" href="/logout">Logout</a>
         </div>
-        <div class="account-info-col" th:if="${account == null}">
-          <a class="link" href="/register">Register</a>
-          <a class="link" href="/login">Login</a>
-        </div>
-      </div>
-      <div class="notices">
-        <div class="notices-link">
-          <a class="link" href="javascript:void(0)">Help</a>
-        </div>
-        <div class="server-time-row">
-          <p class="server-time">Time: 12:10</p>
-          <img src="/icons/clock-black.png" width="22px" alt="Clock">
-        </div>
-      </div>
-      <div class="search">
-        <input class="search-input" type="text" placeholder="Search">
-        <a class="search-action" href="javascript:void(0)">
-          <img src="/icons/search.png" width="16" alt="Search">
-        </a>
       </div>
     </div>
   </header>
