@@ -125,6 +125,16 @@ class DummySetupCommand(private val db: MongoDatabase) : Command {
                             }
                         } else {
                             latestPostOfSections[topic.sectionId] = topic.postedDate
+                            serverContext.subunits.collection.updateLatestPost(
+                                sectionId = topic.sectionId,
+                                postInfo = LatestSectionPostInfo(
+                                    PostInfoType.Topic,
+                                    topic.topicId,
+                                    null,
+                                    topic.authorId,
+                                    topic.postedDate
+                                )
+                            )
                         }
                     }
                 }
