@@ -59,8 +59,6 @@ export default defineConfig({
             { label: "Profile", slug: "profile" },
             { label: "Data Modelling", slug: "data-modelling" },
             { label: "Attendance", slug: "attendance" },
-            { label: "Mailbox", slug: "mailbox" },
-            { label: "Board", slug: "board" },
             { label: "Games", slug: "games" },
             { label: "Activity", slug: "activity" },
             { label: "Radio", slug: "radio" },

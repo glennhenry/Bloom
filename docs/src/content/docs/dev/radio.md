@@ -4,7 +4,7 @@ slug: radio
 description: Radio docs
 ---
 
-The radio is a small, active announcement system that appears on every page of the website in the form of marquee text or located within the right sidebar. It differs with the bulettin board, which is a static, permanent system intended for persistent announcements.
+The radio is a small, active announcement system that appears on every page of the website in a form of marquee text.
 
 ### Source
 
@@ -19,3 +19,5 @@ From a class like `RadioService` any component in the server can send a content 
    - "In order to post a topic or reply, you need to register first."
    - "Bloom started its development from June 2026."
 3. [Activity](/docs/activity): Particular type of activity may be broadcasted through the radio according to their consumers.
+
+Each radio announcement may optionally redirect to a place where the more detailed information can be found. The [cafe](/docs/cafe) can be utilized for this. Bloom cafe would have a dedicated system announcement and feedback section.

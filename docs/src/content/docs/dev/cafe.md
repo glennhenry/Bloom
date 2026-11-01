@@ -4,6 +4,10 @@ slug: cafe
 description: Cafe docs
 ---
 
+Not to be confused with the [Bloom network](/docs/network), this section is the K-pop specific, traditional forum.
+
+### Cafe
+
 The cafe is structured like:
 
 ```
