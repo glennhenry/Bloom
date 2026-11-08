@@ -9,8 +9,15 @@
       display: flex;
       border-bottom: 1px solid var(--border-color);
       z-index: var(--topbar-zindex);
-      background: var(--white-to-gray-gradient);
+      background: linear-gradient(to bottom, #ffffff, var(--toolbar-gradient-end));
       font-size: 14px;
+    }
+
+    .topbar-divider {
+      background-color: #ccc;
+      width: 1px;
+      height: 65px;
+      align-self: center;
     }
 
     .topbar-grid {
@@ -157,6 +164,7 @@
 <body>
   <header class="topbar" th:fragment="topbar (account)">
     <div th:replace="~{fragments/logo :: logo}"></div>
+    <div class="topbar-divider"></div>
     <div class="topbar-grid">
       <div class="topbar-up">
         <nav class="links">

@@ -16,12 +16,13 @@
   --purple-600: #71339b;
   --purple-700: #602c83;
   --violet-500: #674fb5;
-  --violet-550: rgb(78, 59, 141);
+  --violet-550: #4e3b8d;
   --border-color: #dadada;
   --site-bg-color: #f2f2f2;
   --content-bg-color: #ffffff;
-  --primary-gradient-start: #ffafcf;
-  --primary-gradient-end: #ff8bb6;
+  --toolbar-gradient-end: #fbf6ff;
+  --primary-gradient-start: #c897f0;
+  --primary-gradient-end: #9e72c2;
   --primary-gradient: linear-gradient(
     to bottom,
     var(--primary-gradient-start),
@@ -40,7 +41,7 @@
 
   /* Text colors */
   --footer-text-color: #999;
-  --primary-foreground: #520707;
+  --primary-foreground: #2b1163;
 
   /* Other */
   --topbar-zindex: 1;
@@ -73,7 +74,6 @@ body {
   align-items: center;
   justify-content: center;
   padding: 16px;
-  background: linear-gradient(to bottom, #ffdbe8, #ffbed6);
 }
 
 .core {
