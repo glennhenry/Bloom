@@ -11,6 +11,7 @@ import bloom.profile.model.GameProfile
 import bloom.profile.model.Profile
 import bloom.profile.model.UserLevel
 import bloom.profile.model.UsersStats
+import encore.utils.randomString
 
 fun createAccount(
     userId: UserId = Ids.uuid(),

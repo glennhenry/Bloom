@@ -9,8 +9,8 @@ import kotlinx.coroutines.test.runTest
 import bloom.kpop.cafe.topic.MongoTopicRepository
 import bloom.kpop.cafe.topic.LatestPostInfo
 import bloom.kpop.cafe.topic.Topic
+import encore.utils.randomString
 import testUtils.assertDoesNotFailSuspend
-import testUtils.randomString
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFailsWith

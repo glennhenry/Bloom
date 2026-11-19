@@ -7,8 +7,8 @@ import kotlinx.coroutines.test.runTest
 import bloom.kpop.cafe.reply.Comment
 import bloom.kpop.cafe.reply.MongoReplyRepository
 import bloom.kpop.cafe.reply.Reply
+import encore.utils.randomString
 import testUtils.assertDoesNotFailSuspend
-import testUtils.randomString
 import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
