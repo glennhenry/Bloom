@@ -21,8 +21,8 @@
   --site-bg-color: #f2f2f2;
   --content-bg-color: #ffffff;
   --toolbar-gradient-end: #fbf6ff;
-  --primary-gradient-start: #c897f0;
-  --primary-gradient-end: #9e72c2;
+  --primary-gradient-start: #efd8ff;
+  --primary-gradient-end: #dec1f6;
   --primary-gradient: linear-gradient(
     to bottom,
     var(--primary-gradient-start),
